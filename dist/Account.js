@@ -5,33 +5,33 @@ export class Account {
         this._holder = holder;
     }
     //Getters
-    getNumAccount() {
-        return this._numAccount;
-    }
-    getBalance() {
+    get balance() {
         return this._balance;
     }
-    getHolder() {
+    get holder() {
         return this._holder;
     }
+    get numAccount() {
+        return this._numAccount;
+    }
     //Setters
-    setHolder(holder) {
-        this._holder = holder;
+    set holder(newHolder) {
+        this._holder = newHolder;
     }
-    //Methods
+    // Méthodes
     deposit(amount) {
-        if (amount < 0) { }
-        else {
-            this._balance += amount;
+        if (amount < 0) {
+            throw new Error("Amount must be positive");
         }
+        this._balance += amount;
     }
-    removing(amount) {
-        if (this._balance - amount < 0) {
-            alert('Credit insufisant');
+    debit(amount) {
+        if (amount < 0) {
+            throw new Error("Amount must be positive");
         }
-        else {
-            this._balance -= amount;
-        }
+        this._balance -= amount;
+    }
+    applyInterest(interest) {
     }
     toString() {
         return `Compte de ${this._holder.toString()} | Numéro de compte : ${this._numAccount} | Solde : ${this._balance}`;

@@ -1,4 +1,4 @@
-import { Account } from "./Compte.js";
+import { Account } from "./Account.js";
 export class Current extends Account {
     constructor(numAccount, balance, holder, minLimitCredit) {
         super(numAccount, balance, holder);

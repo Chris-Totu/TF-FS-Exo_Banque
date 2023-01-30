@@ -1,7 +1,7 @@
-import { Person } from "./Personne.js";
-import { Current } from "./Courant.js";
-import { Bank } from "./Banque.js";
-import { Savings } from "./Epargne.js";
+import { Person } from "./Person.js";
+import { Current } from "./Current.js";
+import { Bank } from "./Bank.js";
+import { Savings } from "./Saving.js";
 //création de deux personnes:
 const person1 = new Person('Debris', 'Julien', new Date('2001-01-01'));
 const person2 = new Person('Chiah', 'Julie', new Date('1996-01-01'));
@@ -23,11 +23,11 @@ console.log(savingAccChiah.toString());
 const belfius = new Bank('Belfius');
 //Affichage infos Banque Belfius
 console.log(belfius.toString());
-//Ajout des trois comptes à la banque:
+//Ajout des trois comptes courants à la banque:
 belfius.addAccount(accountDebris_1);
 belfius.addAccount(accountDebris_2);
 belfius.addAccount(accountChiah_1);
-//Ajout des trois comptes à la banque:
+//Ajout des deux comptes épargnes à la banque:
 belfius.addAccount(savingAccDebris);
 belfius.addAccount(savingAccChiah);
 //Affichage infos Banque Belfius:
@@ -36,6 +36,7 @@ console.log(belfius.toString());
 let accountTest = 'BE060635';
 console.log('Infos compte BE060635 : \n' + belfius.getAccount(accountTest));
 //Affichage de la somme des soldes positifs des comptes appartenant au titulaire Debris Julien:
-console.log('Somme soldes Debris Julien: ' + belfius.getSumAccounts(person1));
+console.log('Somme soldes Debris Julien: ' + belfius.sumBalanceAccount(person1));
 //Test retrait de 7M sur le compte courant de chiah:
-accountChiah_1.removing(7000000);
+console.log(`-ok ici-`);
+accountChiah_1.debit(7000000);
