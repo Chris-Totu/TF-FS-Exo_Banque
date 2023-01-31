@@ -1,5 +1,5 @@
 # TF-FS2-Exo_Bank
 ## Exécution du programme
-## Installer typrscipt de manière global: npm install -g typescript 
-## tsc -w compiler le code
-## node dist/index.js
+> 1. Installer typrscipt de manière global: `npm install -g typescript`
+>2. `tsc -w` compiler le code
+>3. `node dist/index.js`
